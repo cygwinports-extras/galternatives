@@ -1,0 +1,22 @@
+--- origsrc/galternatives-0.13.5/galternatives/galternatives	2004-12-07 20:10:55.000000000 -0600
++++ src/galternatives-0.13.5/galternatives/galternatives	2011-10-28 02:02:41.640057100 -0500
+@@ -11,7 +11,7 @@ _ = gettext.gettext
+ gettext.bindtextdomain (PACKAGE)
+ gettext.textdomain (PACKAGE)
+ 
+-if os.getuid ():
++if os.getuid () and sys.platform != 'cygwin':
+         if os.access ('/usr/bin/gksu', os.X_OK):
+             sys.exit (os.system ('/usr/bin/gksu -t "%s" -m "%s" -u root %s' % 
+                                  (_('Running Alternatives Configurator...'),
+--- origsrc/galternatives-0.13.5/galternatives/main.py	2011-10-28 01:59:29.182521500 -0500
++++ src/galternatives-0.13.5/galternatives/main.py	2011-10-28 02:03:01.374091500 -0500
+@@ -478,7 +478,7 @@ class GAlternatives:
+         self.status_menu.handler_unblock (self.status_changed_signal)
+ 
+ if __name__ == '__main__':
+-    if os.getuid ():
++    if os.getuid () and sys.platform != 'cygwin':
+         if os.access ('/usr/bin/gksu', os.X_OK):
+             sys.exit (os.system ('/usr/bin/gksu -t "%s" -m "%s" -u root %s' % 
+                                  (_('Running Alternatives Configurator...'),

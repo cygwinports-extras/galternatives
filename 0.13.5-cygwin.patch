@@ -1,0 +1,24 @@
+Cygwin alternatives is not part of dpkg
+
+--- origsrc/galternatives-0.13.5/galternatives/alternative.py	2004-11-21 22:02:33.000000000 -0600
++++ src/galternatives-0.13.5/galternatives/alternative.py	2011-10-28 01:07:07.741954400 -0500
+@@ -64,7 +64,7 @@ class Alternative:
+             pass
+ 
+         # now get the real information!
+-        altfile = open ('/var/lib/dpkg/alternatives/%s' % (unixname))
++        altfile = open ('/var/lib/alternatives/%s' % (unixname))
+ 
+         # parsing file
+         self.option_status = altfile.readline ().strip ()
+--- origsrc/galternatives-0.13.5/galternatives/main.py	2005-08-17 20:21:04.000000000 -0500
++++ src/galternatives-0.13.5/galternatives/main.py	2011-10-28 01:07:11.563961000 -0500
+@@ -344,7 +344,7 @@ class GAlternatives:
+                                      text=self.SLAVEPATH)
+         self.slaves_tv.append_column (column)
+ 
+-    def update_alternatives (self, directory='/var/lib/dpkg/alternatives/'):
++    def update_alternatives (self, directory='/var/lib/alternatives/'):
+         self.alternatives_model.clear ()
+         alternatives = os.listdir (directory)
+         alternatives.sort ()

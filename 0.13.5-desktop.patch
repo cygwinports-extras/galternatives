@@ -1,0 +1,13 @@
+--- origsrc/galternatives-0.13.5/galternatives.desktop.in	2004-06-14 17:04:11.000000000 -0500
++++ src/galternatives-0.13.5/galternatives.desktop.in	2011-10-28 01:44:57.297001300 -0500
+@@ -4,8 +4,8 @@ Encoding=UTF-8
+ _Name=Alternatives Configurator
+ _Comment=Configure the system default alternatives
+ Type=Application
+-Exec=/usr/sbin/galternatives
+-TryExec=
++Exec=galternatives
++TryExec=galternatives
+ Icon=/usr/share/pixmaps/galternatives.png
+ X-GNOME-DocPath=
+ Terminal=false
