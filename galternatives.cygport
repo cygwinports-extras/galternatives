@@ -1,12 +1,21 @@
 inherit distutils
 
-
+NAME="galternatives"
+VERSION=0.13.5
+RELEASE=2
+CATEGORY="Admin"
+SUMMARY="GTK+ GUI for update-alternatives"
+DESCRIPTION="A GUI to help the system administrator to choose what program
+should provide a given service. This is a graphical front-end to the
+update-alternatives program."
 HOMEPAGE="http://packages.debian.org/source/sid/galternatives"
 SRC_URI="mirror://debian/pool/main/g/galternatives/${PN}_${PV}+nmu2.tar.gz"
 
 PATCH_URI="0.13.5-cygwin.patch
 	   0.13.5-desktop.patch
 	   0.13.5-no-gksu.patch"
+
+REQUIRES="alternatives"
 
 DISTCLEANFILES="*.desktop"
 
